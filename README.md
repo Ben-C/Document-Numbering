@@ -1,2 +1,2 @@
-# Document_Number_Creator
+# Document Number Creator
 Document Number Generator.
