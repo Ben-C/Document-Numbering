@@ -1,17 +1,27 @@
-import tkinter
+from tkinter import *
 import datetime
 
 
-def get_doctype():
+def click():
+    entered_pro_code = pro_code.get()
+
+def get_doctype(click):
     """ Allows users to input project information. Such as project code, orginator, document type and discipline"""
     project_code = []
     originator = []
     document_type = []
     discipline_type = []
     user_cancel = True
+
+    window = Tk()
+    window.title("Project properties input")    
+    photo1 = PhotoImage(file="Arup.gif")
+    Label (window, image=photo1) .grid(row=0, column=3, sticky=E)
+    Label (window, text="Please enter project code: ", font="none 12") .grid(row=2, column=0, sticky=E)    
     
-    pro_code = input("Please enter project code: \n")
-    project_code.append(pro_code)
+    pro_code = Entry(window, width=20, bg="white")
+    pro_code.grid(row=2, column=1, sticky=E)
+    project_code.append(entered_pro_code)
     
     origin = input("Please set originator: \n")
     originator.append(origin)
@@ -42,7 +52,7 @@ def get_doctype():
     print (document_type)
     print (discipline_type)
 
-
+    window.get_doctypeloop()
 
 
 
@@ -51,4 +61,4 @@ def get_doctype():
 #    document_type = []
 
 if __name__=="__main__":
-    get_doctype()
+    get_doctype(click)
